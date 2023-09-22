@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-     Timer(Duration(seconds: 5), () {
+     Timer(Duration(seconds: 3), () {
 
        Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>QuizPage()
        ));
@@ -27,15 +27,14 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-
-          color: Colors.cyan,
+               
+          color: Colors.white,
           child: Center(
-            child: const Text('GAMZY',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),),
+            child: Container(
+              width: 200,
+              height: 200,
+              child:Image.asset('assets/images/888959262fc53dc493f21c68efd46dc1.jpg')
+            ),
           ),
         ),
     );
