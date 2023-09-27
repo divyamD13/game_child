@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:game_child/homepage.dart';
+import 'package:game_child/loginpage.dart';
 import 'package:game_child/quizpage.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
      Timer(Duration(seconds: 3), () {
 
-       Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>QuizPage()
+       Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>LoginPage()
        ));
      });
   }
