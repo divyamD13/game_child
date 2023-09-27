@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:game_child/colors.dart';
+import 'package:game_child/quizpage.dart';
+
 class EducationQuiz1 extends StatefulWidget {
   const EducationQuiz1({super.key});
 
@@ -38,7 +40,7 @@ class _EducationQuiz1State extends State<EducationQuiz1> {
             height: 300,
             child: Image.asset('assets/images/7391d4d6da02fa217de50165e91660cf.jpg',fit: BoxFit.fill,),
           ),
-          SizedBox(height: 30,),
+          SizedBox(height: 50,),
         const Row(
           children: [
 
@@ -58,37 +60,77 @@ class _EducationQuiz1State extends State<EducationQuiz1> {
               SizedBox(
                 width: 30,
               ),
-              Container(
-                width: 150,
-                height: 150,
-                child: Image.asset('assets/images/edu.jpg',fit: BoxFit.fill,),
+              GestureDetector(
+                onTap: () {
+                  print("Option 1 selected");
+                  showDialog(context: context, builder: (BuildContext context){
+                    return AlertDialog(
+                      title: Text("CORRECT ANSWER",
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),),
+
+                      content: Text("Each and Every child has Right to Education  \n Learn more",
+                        style: TextStyle(
+                          fontSize: 23,
+                        ),
+                      ),
+                    );
+                  });
+                },
+                child: Container(
+                  width: 150,
+                  height: 150,
+                  child: Image.asset('assets/images/EDUCATION.jpg',fit: BoxFit.fill,),
+                ),
               ),
               SizedBox(
                 width: 40,
               ),
-              Container(
-                width: 150,
-                height: 150,
-                child: Image.asset('assets/images/edu1.jpg',fit: BoxFit.fill,),
+              GestureDetector(
+                onTap: () {
+                  print("OPtion 2 selecteD");
+                  showDialog(context: context, builder: (BuildContext context){
+                    return AlertDialog(
+
+                      title: Text("WRONG ANSWER",style: TextStyle(
+                         color: Colors.red,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),),
+                      content: Text("Child Labour is a crime",
+                      style: TextStyle(
+                        fontSize: 25,
+                      ),),
+                    );
+                  });
+                },
+                child: Container(
+                  width: 150,
+                  height: 150,
+                  child: Image.asset('assets/images/edu1.jpg',fit: BoxFit.fill,),
+                ),
               ),
             ],
           ),
           SizedBox(
             height: 20,
           ),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black,
-                  backgroundColor: Colors.orange.shade300,
-               ),
-              onPressed: (){
-
-              },
-              child: Text('SUBMIT',style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),)
-          ),
+          // ElevatedButton(
+          //     style: ElevatedButton.styleFrom(
+          //         foregroundColor: Colors.black,
+          //         backgroundColor: Colors.orange.shade300,
+          //      ),
+          //     onPressed: (){
+          //
+          //     },
+          //     child: Text('SUBMIT',style: TextStyle(
+          //       fontWeight: FontWeight.bold,
+          //       fontSize: 20,
+          //     ),)
+          // ),
         ],
       ),
     );

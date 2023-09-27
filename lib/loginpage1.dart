@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:game_child/forgotpassword.dart';
+import 'package:game_child/homepage.dart';
 import 'package:game_child/quizpage.dart';
 
 import 'loginpage2.dart';
@@ -71,9 +73,9 @@ class _LoginPageState extends State<LoginPage> {
                       TextButton(
                         child:Text('Forgot password?',
                           style: TextStyle(fontSize: 12.0,color: Colors.blue.shade900),),
-                        onPressed: (
-
-                            ) {  },
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>ResetPasswordPage()));
+                              },
                       ),
 
                       ElevatedButton(
@@ -87,7 +89,8 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         onPressed: (){
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>QuizPage()));
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
+
                         },
 
                       )

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:game_child/lesson.dart';
+import 'package:game_child/quizpage.dart';
+
+import 'colors.dart';
 // import 'dart:async';
 // import 'package:flutter/material.dart';
 
@@ -14,102 +18,131 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: const Text('SIHH'),
+        backgroundColor: button,
+        title:Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+         const Text('GAMZY',style: TextStyle(
+           fontSize: 30,
+           fontWeight: FontWeight.bold,
+
+         ),),
+
+              Container(
+                  height: 40,
+                  width: 40,
+
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset('assets/images/888959262fc53dc493f21c68efd46dc1.jpg'),
+                  )
+              )
+        ],
+      ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: SingleChildScrollView(
             child: Column(
           children: [
-            new GestureDetector(
+            SizedBox(
+              height: 20,
+            ),
+            Text(' Hi, Abhishek',style:
+              TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold
+              ),),
+            SizedBox(
+              height: 20,
+            ),
+            GestureDetector(
                 onTap: () {
                   print("Container 1 clicked");
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>QuizPage()));
                 },
                 child: Container(
-                  // height: 340,
-                  width: double.infinity,
-                  margin: const EdgeInsets.only(bottom: 8),
+                  height: 300,
+                  width: 350,
+
+                  margin: const EdgeInsets.only(bottom: 10),
                   // padding: const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 40.0),
                   // color: Colors.green,
-                  child: Image.asset('assets/images/quiz.jpg'),
-                  // child: Column(children: [
-                  //   const Text("Ableitungen"),
-                  // ]),
+                  child: Container(
+                      height: 200,
+                      width: 200,
+                      child: Image.asset('assets/images/quiz.jpg')),
+
                 )),
             new GestureDetector(
                 onTap: () {
                   print("Container 2 clicked");
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>lessontime()));
                 },
                 child: Container(
-                  // height: 340,
-                  width: double.infinity,
+
+                  height: 300,
+                  width: 500,
+
                   margin: const EdgeInsets.only(bottom: 8),
-                  // padding: const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 40.0),
-                  // color: Colors.orange,
-                  // child: Column(children: [
-                  //   const Text("Ableitungen"),
-                  // ]),
-                  child: Image.asset('assets/images/story.png'),
+
+                  child: Container(
+                      height: 200,
+                      width: 200,
+                      child: Image.asset('assets/images/lesson.jpg')),
                 )),
-            new GestureDetector(
-                onTap: () {
-                  print("Container 3 clicked");
-                },
-                child: Container(
-                  height: 340,
-                  width: double.infinity,
-                  margin: const EdgeInsets.only(bottom: 8),
-                  padding: const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 40.0),
-                  color: Colors.yellowAccent,
-                  child: Column(children: [
-                    const Text("Ableitungen"),
-                  ]),
-                )),
+            // new GestureDetector(
+            //     onTap: () {
+            //       print("Container 3 clicked");
+            //     },
+            //     child: Container(
+            //       height: 340,
+            //       width: double.infinity,
+            //       margin: const EdgeInsets.only(bottom: 8),
+            //       padding: const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 40.0),
+            //       color: Colors.yellowAccent,
+            //       child: Column(children: [
+            //         const Text("Ableitungen"),
+            //       ]),
+            //     )),
           ],
         )),
       ),
-      //   child: const  Center(
-      //     child: Text(
-      //   'A drawer is an invisible side screen.',
-      //   style: TextStyle(fontSize: 20.0),
-      // )),
+
       drawer: Drawer(
         child: ListView(
           padding: const EdgeInsets.all(0),
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.green,
+                color: Colors.orange,
               ), //BoxDecoration
               child: UserAccountsDrawerHeader(
-                decoration: BoxDecoration(color: Colors.green),
+                decoration: BoxDecoration(color:Colors.orange),
                 accountName: Text(
                   "Abhishek Mishra",
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 20),
                 ),
-                accountEmail: Text("abhishekm977@gmail.com"),
+                accountEmail: Text("abhishekm977@gmail.com",style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.normal
+                ),),
                 currentAccountPictureSize: Size.square(50),
                 currentAccountPicture: CircleAvatar(
-                  backgroundColor: Color.fromARGB(255, 165, 255, 137),
+                  backgroundColor: Colors.amber,
                   child: Text(
                     "A",
-                    style: TextStyle(fontSize: 30.0, color: Colors.blue),
+                    style: TextStyle(fontSize: 30.0, color: Colors.brown,
+                      fontWeight: FontWeight.bold
+                    ),
+
                   ),
                 ), //circleAvatar
               ), //UserAccountDrawerHeader

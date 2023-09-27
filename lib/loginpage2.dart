@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:game_child/loginpage.dart';
+import 'package:game_child/homepage.dart';
+
 import 'package:game_child/quizpage.dart';
+
+import 'loginpage1.dart';
 class Second extends StatefulWidget {
   @override
   _SecondState createState() => _SecondState();
@@ -68,7 +71,7 @@ class _SecondState extends State<Second> {
                           backgroundColor: Colors.orange.shade300
                       ),
                       onPressed: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>QuizPage()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
                       },
                       child: Text('Signup',style: TextStyle(
                         color: Colors.black,
