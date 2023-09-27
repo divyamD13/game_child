@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_child/Eduquiz1.dart';
 class QuizPage extends StatefulWidget {
   const QuizPage({super.key});
 
@@ -24,8 +25,6 @@ class _QuizPageState extends State<QuizPage> {
             fontWeight: FontWeight.bold,
           ) ,
         ),
-
-
       ),
        body: Scrollbar(
          child: ListView.separated(itemBuilder: (context,index){
@@ -34,7 +33,7 @@ class _QuizPageState extends State<QuizPage> {
 
                    child: Image.asset('assets/images/png-transparent-universal-declaration-of-human-rights-right-to-education-childrens-rights-law-discovery-cartoon-s-child-cartoon-fictional-character-thumbnail.png')
                  ),
-                 title: Text(arrQuiz[index],style: TextStyle(
+                 title: Text(arrQuiz[index],style: const TextStyle(
                    fontSize: 15,
                    fontWeight: FontWeight.w500,
                  ),),
@@ -47,7 +46,9 @@ class _QuizPageState extends State<QuizPage> {
                    width:50,
                    height:50,
 
-                   child: IconButton(onPressed: (){}, icon:Icon(Icons.arrow_forward_ios_sharp),
+                   child: IconButton(onPressed: (){
+                     Navigator.push(context, MaterialPageRoute(builder: (context)=>EducationQuiz1()));
+                   }, icon:Icon(Icons.arrow_forward_ios_sharp),
                    color: Colors.white,),
                  ),
                );
