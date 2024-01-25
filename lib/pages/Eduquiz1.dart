@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:game_child/colors.dart';
-import 'package:game_child/quizpage.dart';
+import 'package:game_child/constants/colors.dart';
+import 'package:game_child/pages/quizpage.dart';
 
 class EducationQuiz1 extends StatefulWidget {
   const EducationQuiz1({super.key});

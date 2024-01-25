@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:game_child/lesson.dart';
-import 'package:game_child/quizpage.dart';
+import 'package:game_child/pages/lesson.dart';
+import 'package:game_child/pages/quizpage.dart';
 
-import 'colors.dart';
+import '../constants/colors.dart';
 // import 'dart:async';
 // import 'package:flutter/material.dart';
 
@@ -90,9 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   height: 300,
                   width: 500,
-
                   margin: const EdgeInsets.only(bottom: 8),
-
                   child: Container(
                       height: 200,
                       width: 200,
